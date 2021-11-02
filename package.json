@@ -1,0 +1,15 @@
+{
+  "name": "oltest",
+  "version": "1.0.0",
+  "description": "A test application using Open Layers API",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thenlie",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "python-shell": "^3.0.1"
+  }
+}
