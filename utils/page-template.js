@@ -59,11 +59,9 @@ const getHTML = (route, url) => {
             locations.push(route[i]);
         }
     }
-    console.log(locations)
     for (let i = 0; i < locations.length; i++) {
         htmlLocations += locationList(locations[i]);
     }
-    console.log(htmlLocations)
     return `
     <!doctype html>
     <html lang="en">
