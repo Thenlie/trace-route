@@ -1,4 +1,10 @@
-const getScript = cords => {
+const getScript = route => {
+    cords = []
+    for (let i = 1; i < route.length; i++) {
+        if (i % 2 === 0) {
+            cords.push(route[i]);
+        }
+    }
     return `
     var map = new ol.Map({
         target: 'map',
@@ -40,7 +46,24 @@ const getScript = cords => {
     `
 }
 
-const getHTML = () => {
+const locationList = (location) => {
+    return `
+                    <li class="location-item">${location}</li>`
+};
+
+const getHTML = (route, url) => {
+    let locations = [];
+    let htmlLocations = [];
+    for (let i = 1; i < route.length; i++) {
+        if (i % 2 !== 0) {
+            locations.push(route[i]);
+        }
+    }
+    console.log(locations)
+    for (let i = 0; i < locations.length; i++) {
+        htmlLocations += locationList(locations[i]);
+    }
+    console.log(htmlLocations)
     return `
     <!doctype html>
     <html lang="en">
@@ -48,19 +71,28 @@ const getHTML = () => {
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" type="text/css">
-        <style>
-            .map {
-                height: 800px;
-                width: 100%;
-            }
-        </style>
+        <link rel="stylesheet" href="styles.css">
         <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
         <title>OpenLayers example</title>
     </head>
 
+    <header>
+        <h2>The trace route to ${url}!</h2>
+    </header>
+
     <body>
-        <h2>My Map</h2>
-        <div id="map" class="map"></div>
+        <section class="map-container">
+            <div id="map" class="map"></div>
+        </section>
+        
+        <section>
+            <div class="location-container">
+                <ul class="location-list">
+                            ${htmlLocations}
+                </ul>
+            </div>
+        </section>
+        
         <script src='./script.js'></script>
     </body>
 

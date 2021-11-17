@@ -10,7 +10,6 @@ result = run(['tracert', URL], capture_output=True, text=True)
 s = (result.stdout)
 
 ip = re.findall( r'[0-9]+(?:\.[0-9]+){3}', s )
-# print(ip)
 
 def getLocation():
     for i in range(len(ip)):
@@ -18,10 +17,11 @@ def getLocation():
         data = response.json()
         status = data['status']
         if status == 'success':
-            # location = data['city'] + ', ' + data['regionName'] + '. ' + data['country']
+            location = data['city'] + ', ' + data['regionName'] + '. ' + data['country']
             lat = str(data['lat'])
             lon = str(data['lon'])
             print('[' + lon + ', ' + lat + ']')
+            print(location)
         else:
             continue        
 

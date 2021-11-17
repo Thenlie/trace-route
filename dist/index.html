@@ -5,19 +5,39 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" type="text/css">
-        <style>
-            .map {
-                height: 800px;
-                width: 100%;
-            }
-        </style>
+        <link rel="stylesheet" href="styles.css">
         <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
         <title>OpenLayers example</title>
     </head>
 
+    <header>
+        <h2>The trace route to www.u-tokyo.ac.jp!</h2>
+    </header>
+
     <body>
-        <h2>My Map</h2>
-        <div id="map" class="map"></div>
+        <section class="map-container">
+            <div id="map" class="map"></div>
+        </section>
+        
+        <section>
+            <div class="location-container">
+                <ul class="location-list">
+                            
+                    <li class="location-item">Kitakyushu, Fukuoka. Japan</li>
+                    <li class="location-item">Salt Lake City, Utah. United States</li>
+                    <li class="location-item">Salt Lake City, Utah. United States</li>
+                    <li class="location-item">Newark, New Jersey. United States</li>
+                    <li class="location-item">Sydney, Florida. United States</li>
+                    <li class="location-item">Newark, New Jersey. United States</li>
+                    <li class="location-item">New York, New York. United States</li>
+                    <li class="location-item">Minato-ku, Tokyo. Japan</li>
+                    <li class="location-item">Chiyoda, Tokyo. Japan</li>
+                    <li class="location-item">Chiyoda, Tokyo. Japan</li>
+                    <li class="location-item">Chiyoda, Tokyo. Japan</li>
+                </ul>
+            </div>
+        </section>
+        
         <script src='./script.js'></script>
     </body>
 

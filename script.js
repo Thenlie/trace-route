@@ -3,6 +3,9 @@ const { getScript, getHTML } = require('./utils/page-template');
 const { writeHTML, writeJS } = require('./utils/generate-site');
 const inquirer = require('inquirer');
 
+let route = [];
+let url = ''
+
 const promptUser = () => {
     return inquirer.prompt([{
         type: 'input',
@@ -18,6 +21,7 @@ const promptUser = () => {
         } 
     }])
     .then(input => {
+        url = input.url;
         return(input);
     });
 };
@@ -27,14 +31,15 @@ promptUser()
         return runPy(input.url);
     })
     .then(res => {
-        return getScript(res.message);
+        route = res.message;
+        return getScript(route);
     })
     .then(script => {
         return writeJS(script);
     })
     .then(writeJSRes => {
         console.log(writeJSRes)
-        return getHTML();
+        return getHTML(route, url);
     })
     .then(HTML => {
         return writeHTML(HTML);

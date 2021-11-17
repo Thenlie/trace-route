@@ -1,0 +1,34 @@
+html {
+    background-color: grey;
+}
+
+header {
+    background-color: rgba(47, 219, 104, 0.5);
+}
+
+header h2 {
+    text-align: center;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+}
+
+.map {
+    height: 800px;
+    width: 75%;
+}
+
+.location-container {
+    border-radius: 2px;
+    text-align: center;
+}
+
+.location-list {
+    list-style: none;
+}
+
+.location-item {
+    font-size: larger;
+}
