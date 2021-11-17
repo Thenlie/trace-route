@@ -1,16 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     background-color: grey;
 }
 
 header {
-    background-color: rgba(47, 219, 104, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100px;
+    color: white;
 }
 
 header h2 {
+    padding: 30px;
     text-align: center;
 }
 
 .map-container {
+    margin: 20px;
     display: flex;
     justify-content: center;
 }
@@ -21,14 +31,20 @@ header h2 {
 }
 
 .location-container {
-    border-radius: 2px;
-    text-align: center;
+    display: flex;
+    width: 75%;
+    background-color: rgba(100, 100, 100, 0.5);
+    justify-content: center;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
 .location-list {
-    list-style: none;
+    list-style: decimal;
 }
 
 .location-item {
-    font-size: larger;
+    font-size: 28px;
+    margin: 10px;
 }
